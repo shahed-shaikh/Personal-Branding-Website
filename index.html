@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- WEBSITE 19 - PERSONAL BRANDING WEBSITE -->
+    <title>19. THE BRAND EDIT® — Personal Branding</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4efe7;
+            color: #30211f;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-copy {
+            animation: revealText 1s ease both;
+        }
+
+        .hero-portrait {
+            animation: portraitEnter 1.1s ease .2s both;
+        }
+
+        .hero-portrait img {
+            transition: transform 1s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .hero-portrait:hover img {
+            transform: scale(1.045);
+        }
+
+        .gold-button {
+            transition: transform .35s ease, background .35s ease, box-shadow .35s ease;
+        }
+
+        .gold-button:hover {
+            transform: translateY(-5px);
+            background: #c4a16c;
+            box-shadow: 0 15px 35px rgba(90, 54, 37, .2);
+        }
+
+        .dark-button {
+            transition: all .35s ease;
+        }
+
+        .dark-button:hover {
+            background: #b48b5b;
+            color: #30211f;
+            transform: translateY(-4px);
+        }
+
+        .project-card {
+            overflow: hidden;
+            transition: transform .5s ease, box-shadow .5s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 55px rgba(48, 33, 31, .14);
+        }
+
+        .project-card img {
+            transition: transform .8s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .expertise-card {
+            transition: background .4s ease, transform .4s ease;
+        }
+
+        .expertise-card:hover {
+            background: #e7d9c6;
+            transform: translateY(-8px);
+        }
+
+        .text-link {
+            position: relative;
+        }
+
+        .text-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 1px;
+            background: #b48b5b;
+            transition: width .35s ease;
+        }
+
+        .text-link:hover::after {
+            width: 100%;
+        }
+
+        .portrait-frame {
+            transition: transform .6s ease;
+        }
+
+        .portrait-frame:hover {
+            transform: rotate(1.5deg) scale(1.02);
+        }
+
+        .floating-stamp {
+            animation: gentleFloat 5s ease-in-out infinite;
+        }
+
+        .circle-decoration {
+            animation: rotateCircle 22s linear infinite;
+        }
+
+        .quote-card {
+            transition: transform .4s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-6px);
+        }
+
+        @keyframes revealText {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes portraitEnter {
+            from {
+                opacity: 0;
+                transform: translateX(35px) scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-13px) rotate(2deg);
+            }
+        }
+
+        @keyframes rotateCircle {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="px-6 lg:px-16 py-7">
+
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+
+            <a href="#" class="serif text-2xl sm:text-3xl font-bold tracking-tight">
+                THE BRAND EDIT<span class="text-[#b48b5b]">.</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-10 text-xs uppercase tracking-[2px] font-bold text-[#786b61]">
+                <a href="#story" class="text-link">My Story</a>
+                <a href="#work" class="text-link">Selected Work</a>
+                <a href="#expertise" class="text-link">Expertise</a>
+                <a href="#journal" class="text-link">Journal</a>
+            </div>
+
+            <a href="#contact"
+                class="gold-button bg-[#30211f] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                Let's Connect
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="px-6 lg:px-16 pt-12 pb-28">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center">
+
+                    <div class="hero-copy relative z-10">
+
+                        <p class="text-[#a27c51] text-xs uppercase tracking-[5px] font-bold mb-9">
+                            Personal Brand Strategist & Creative Entrepreneur
+                        </p>
+
+                        <h1 class="serif text-6xl sm:text-7xl lg:text-[104px] leading-[.95] tracking-[-3px]">
+                            Your story.
+                            <span class="block italic text-[#a27c51]">Your vision.</span>
+                            Your legacy.
+                        </h1>
+
+                        <p class="text-[#796b61] text-base sm:text-lg leading-8 max-w-lg mt-9">
+                            I help ambitious founders, creative minds and
+                            modern leaders turn their expertise into a
+                            personal brand people remember.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-5 mt-10">
+
+                            <a href="#work"
+                                class="gold-button bg-[#a27c51] text-white px-8 py-4 rounded-full text-sm font-bold">
+                                Explore My World <span class="ml-3">↗</span>
+                            </a>
+
+                            <a href="#story"
+                                class="dark-button border border-[#cfc2b2] px-8 py-4 rounded-full text-sm font-bold">
+                                Discover My Story
+                            </a>
+
+                        </div>
+
+                        <div class="flex items-center gap-10 mt-16 pt-8 border-t border-[#d9cdbf]">
+
+                            <div>
+                                <h3 class="serif text-4xl">12<span class="text-[#a27c51]">+</span></h3>
+                                <p class="text-[10px] uppercase tracking-widest text-[#88796d] mt-2">Years Experience</p>
+                            </div>
+
+                            <div>
+                                <h3 class="serif text-4xl">85<span class="text-[#a27c51]">+</span></h3>
+                                <p class="text-[10px] uppercase tracking-widest text-[#88796d] mt-2">Brand Projects</p>
+                            </div>
+
+                            <div>
+                                <h3 class="serif text-4xl">18</h3>
+                                <p class="text-[10px] uppercase tracking-widest text-[#88796d] mt-2">Countries Reached</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-portrait relative max-w-xl mx-auto w-full">
+
+                        <div class="absolute -top-8 -right-5 w-36 h-36 border border-[#b48b5b] rounded-full circle-decoration"></div>
+
+                        <div class="relative bg-[#d9c8b3] p-3 sm:p-5 rounded-t-[220px] rounded-b-[35px]">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1100&q=85"
+                                alt="Professional portrait for a personal brand"
+                                class="w-full h-[540px] object-cover object-center rounded-t-[210px] rounded-b-[25px]">
+
+                        </div>
+
+                        <div class="floating-stamp absolute -bottom-8 -left-7 bg-[#30211f] text-white w-32 h-32 rounded-full flex flex-col items-center justify-center text-center shadow-xl">
+
+                            <span class="serif text-3xl italic">Est.</span>
+                            <span class="text-xs font-bold tracking-widest mt-1">2014</span>
+
+                        </div>
+
+                        <div class="absolute top-20 -left-12 hidden sm:block bg-[#f4efe7] shadow-lg px-5 py-4 rounded-xl">
+                            <p class="text-[10px] uppercase tracking-widest text-[#a27c51] font-bold">My Philosophy</p>
+                            <p class="serif text-lg italic mt-1">Be unforgettable.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BRAND STATEMENT -->
+        <section class="bg-[#30211f] text-[#f4efe7] px-6 lg:px-16 py-24">
+
+            <div class="max-w-6xl mx-auto text-center">
+
+                <p class="text-[#c4a16c] text-xs uppercase tracking-[5px] font-bold mb-8">
+                    The Power of Personal Branding
+                </p>
+
+                <h2 class="serif text-4xl sm:text-5xl lg:text-7xl leading-tight">
+                    "People don't just connect with what you do.
+                    They connect with <span class="italic text-[#c4a16c]">who you are.</span>"
+                </h2>
+
+                <div class="w-20 h-px bg-[#b48b5b] mx-auto mt-10"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORY -->
+        <section id="story" class="px-6 lg:px-16 py-28">
+
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+                <div class="relative">
+
+                    <div class="absolute top-8 -left-7 w-full h-full border border-[#b48b5b] rounded-[30px]"></div>
+
+                    <div class="portrait-frame relative overflow-hidden rounded-[30px]">
+                        <img
+                            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=85"
+                            alt="Creative professional portrait"
+                            class="w-full h-[560px] object-cover">
+                    </div>
+
+                    <div class="absolute -bottom-6 -right-5 bg-[#a27c51] text-white px-8 py-6 rounded-2xl shadow-xl">
+                        <p class="serif text-3xl italic">Think</p>
+                        <p class="serif text-3xl italic">Beyond.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="lg:pl-8">
+
+                    <p class="text-[#a27c51] text-xs uppercase tracking-[5px] font-bold mb-6">
+                        The Person Behind The Brand
+                    </p>
+
+                    <h2 class="serif text-5xl sm:text-6xl leading-tight">
+                        Not just a name.
+                        <span class="italic text-[#a27c51]">A point of view.</span>
+                    </h2>
+
+                    <p class="text-[#796b61] leading-8 mt-8">
+                        I'm Victoria Hayes, a brand strategist, creative
+                        entrepreneur and believer in the power of authentic
+                        storytelling.
+                    </p>
+
+                    <p class="text-[#796b61] leading-8 mt-5">
+                        Over the years, I've worked with founders,
+                        professionals and creative businesses to define
+                        their identity, communicate their values and build
+                        a presence that feels genuinely their own.
+                    </p>
+
+                    <p class="text-[#796b61] leading-8 mt-5">
+                        My work combines strategy, storytelling and
+                        thoughtful visual direction. Because a strong
+                        personal brand isn't about being louder — it's
+                        about being clear.
+                    </p>
+
+                    <a href="#contact"
+                        class="inline-flex items-center gap-3 text-sm font-bold text-[#a27c51] mt-9 text-link">
+                        Read My Full Story <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED WORK -->
+        <section id="work" class="bg-[#e9dfd2] px-6 lg:px-16 py-28">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-16">
+
+                    <div>
+                        <p class="text-[#a27c51] text-xs uppercase tracking-[5px] font-bold mb-5">
+                            The Portfolio
+                        </p>
+
+                        <h2 class="serif text-5xl sm:text-6xl lg:text-7xl">
+                            Selected <span class="italic">stories.</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-[#796b61] leading-7 max-w-sm">
+                        Every collaboration begins with a question
+                        and ends with a story worth telling.
+                    </p>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-12 gap-7">
+
+                    <article class="project-card md:col-span-7 bg-[#f4efe7] rounded-[25px]">
+
+                        <div class="overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1200&q=85"
+                                alt="Creative brand strategy collaboration"
+                                class="w-full h-[380px] object-cover">
+                        </div>
+
+                        <div class="p-8">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[#a27c51] text-xs uppercase tracking-widest font-bold">Brand Strategy</span>
+                                <span class="text-xs text-[#a79a8b]">01 / 03</span>
+                            </div>
+
+                            <h3 class="serif text-3xl mt-4">The Modern Founder</h3>
+
+                            <p class="text-sm text-[#796b61] mt-3 leading-7">
+                                A complete positioning and storytelling
+                                direction for an emerging business leader.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card md:col-span-5 bg-[#f4efe7] rounded-[25px] md:mt-24">
+
+                        <div class="overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85"
+                                alt="Elegant creative office and brand environment"
+                                class="w-full h-[310px] object-cover">
+                        </div>
+
+                        <div class="p-7">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[#a27c51] text-xs uppercase tracking-widest font-bold">Creative Direction</span>
+                                <span class="text-xs text-[#a79a8b]">02 / 03</span>
+                            </div>
+
+                            <h3 class="serif text-2xl mt-4">The Art of Influence</h3>
+
+                            <p class="text-sm text-[#796b61] mt-3 leading-7">
+                                Creating a distinctive visual world
+                                for a creative entrepreneur.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card md:col-span-5 bg-[#f4efe7] rounded-[25px]">
+
+                        <div class="overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+                                alt="Business strategy meeting"
+                                class="w-full h-[310px] object-cover">
+                        </div>
+
+                        <div class="p-7">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[#a27c51] text-xs uppercase tracking-widest font-bold">Thought Leadership</span>
+                                <span class="text-xs text-[#a79a8b]">03 / 03</span>
+                            </div>
+
+                            <h3 class="serif text-2xl mt-4">Ideas That Lead</h3>
+
+                            <p class="text-sm text-[#796b61] mt-3 leading-7">
+                                Building a recognisable voice and
+                                a consistent professional presence.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <div class="md:col-span-7 bg-[#30211f] rounded-[25px] p-10 sm:p-14 flex flex-col justify-center text-[#f4efe7]">
+
+                        <p class="text-[#c4a16c] text-xs uppercase tracking-[4px] font-bold">
+                            The Next Chapter
+                        </p>
+
+                        <h3 class="serif text-4xl sm:text-5xl leading-tight mt-6">
+                            Your story could be the next one.
+                        </h3>
+
+                        <a href="#contact"
+                            class="gold-button self-start bg-[#a27c51] text-white px-7 py-4 rounded-full text-sm font-bold mt-9">
+                            Start A Collaboration <span class="ml-3">↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERTISE -->
+        <section id="expertise" class="px-6 lg:px-16 py-28">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="max-w-3xl mb-14">
+
+                    <p class="text-[#a27c51] text-xs uppercase tracking-[5px] font-bold mb-5">
+                        Areas of Expertise
+                    </p>
+
+                    <h2 class="serif text-5xl sm:text-6xl leading-tight">
+                        Building brands with
+                        <span class="italic">intention.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                    <div class="expertise-card border border-[#ded2c3] rounded-[25px] p-8">
+
+                        <span class="serif text-4xl text-[#a27c51]">01</span>
+
+                        <h3 class="serif text-2xl mt-9">Brand Strategy</h3>
+
+                        <p class="text-sm text-[#796b61] leading-7 mt-4">
+                            Defining your purpose, positioning,
+                            audience and unique value.
+                        </p>
+
+                    </div>
+
+
+                    <div class="expertise-card border border-[#ded2c3] rounded-[25px] p-8">
+
+                        <span class="serif text-4xl text-[#a27c51]">02</span>
+
+                        <h3 class="serif text-2xl mt-9">Storytelling</h3>
+
+                        <p class="text-sm text-[#796b61] leading-7 mt-4">
+                            Turning your experience and ideas
+                            into a memorable brand narrative.
+                        </p>
+
+                    </div>
+
+
+                    <div class="expertise-card border border-[#ded2c3] rounded-[25px] p-8">
+
+                        <span class="serif text-4xl text-[#a27c51]">03</span>
+
+                        <h3 class="serif text-2xl mt-9">Visual Identity</h3>
+
+                        <p class="text-sm text-[#796b61] leading-7 mt-4">
+                            Creating a consistent visual
+                            language that reflects your values.
+                        </p>
+
+                    </div>
+
+
+                    <div class="expertise-card border border-[#ded2c3] rounded-[25px] p-8">
+
+                        <span class="serif text-4xl text-[#a27c51]">04</span>
+
+                        <h3 class="serif text-2xl mt-9">Digital Presence</h3>
+
+                        <p class="text-sm text-[#796b61] leading-7 mt-4">
+                            Building a professional online
+                            presence across digital platforms.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- JOURNAL -->
+        <section id="journal" class="bg-[#30211f] text-[#f4efe7] px-6 lg:px-16 py-28">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-14">
+
+                    <div>
+                        <p class="text-[#c4a16c] text-xs uppercase tracking-[5px] font-bold mb-5">
+                            Notes & Perspectives
+                        </p>
+
+                        <h2 class="serif text-5xl sm:text-6xl">
+                            From the journal.
+                        </h2>
+                    </div>
+
+                    <p class="text-sm text-[#b7a79a] max-w-xs leading-7">
+                        Thoughts on creativity, identity,
+                        leadership and meaningful work.
+                    </p>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-3 gap-7">
+
+                    <article class="quote-card border-t border-[#786052] pt-7">
+
+                        <p class="text-[#c4a16c] text-xs uppercase tracking-widest font-bold">
+                            Brand Thinking · 06 Min
+                        </p>
+
+                        <h3 class="serif text-3xl leading-snug mt-6">
+                            Why your personal story is your greatest asset.
+                        </h3>
+
+                        <a href="#contact" class="inline-block text-sm text-[#c4a16c] mt-8 text-link">
+                            Read Article ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="quote-card border-t border-[#786052] pt-7">
+
+                        <p class="text-[#c4a16c] text-xs uppercase tracking-widest font-bold">
+                            Creativity · 04 Min
+                        </p>
+
+                        <h3 class="serif text-3xl leading-snug mt-6">
+                            The difference between being seen and remembered.
+                        </h3>
+
+                        <a href="#contact" class="inline-block text-sm text-[#c4a16c] mt-8 text-link">
+                            Read Article ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="quote-card border-t border-[#786052] pt-7">
+
+                        <p class="text-[#c4a16c] text-xs uppercase tracking-widest font-bold">
+                            Leadership · 08 Min
+                        </p>
+
+                        <h3 class="serif text-3xl leading-snug mt-6">
+                            Building influence without losing authenticity.
+                        </h3>
+
+                        <a href="#contact" class="inline-block text-sm text-[#c4a16c] mt-8 text-link">
+                            Read Article ↗
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TESTIMONIAL -->
+        <section class="px-6 lg:px-16 py-28">
+
+            <div class="max-w-5xl mx-auto text-center">
+
+                <p class="text-[#a27c51] text-xs uppercase tracking-[5px] font-bold mb-9">
+                    Kind Words
+                </p>
+
+                <div class="serif text-6xl text-[#b48b5b]">“</div>
+
+                <h2 class="serif text-3xl sm:text-5xl leading-tight">
+                    Victoria helped us find the words,
+                    the direction and the confidence
+                    to communicate who we really are.
+                </h2>
+
+                <div class="w-16 h-px bg-[#b48b5b] mx-auto my-9"></div>
+
+                <p class="font-bold text-sm">Sophia Bennett</p>
+
+                <p class="text-xs text-[#88796d] mt-2 uppercase tracking-widest">
+                    Founder & Creative Director
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="px-6 lg:px-16 pb-24">
+
+            <div class="max-w-7xl mx-auto bg-[#dfcfba] rounded-[35px] p-8 sm:p-16 relative overflow-hidden">
+
+                <div class="absolute -right-20 -top-24 w-80 h-80 border-[35px] border-white/20 rounded-full circle-decoration"></div>
+
+                <div class="relative z-10 max-w-3xl">
+
+                    <p class="text-[#8e6844] text-xs uppercase tracking-[5px] font-bold mb-6">
+                        The Conversation Starts Here
+                    </p>
+
+                    <h2 class="serif text-5xl sm:text-7xl leading-tight">
+                        Make your name mean something.
+                    </h2>
+
+                    <p class="text-[#796b61] leading-8 max-w-xl mt-7">
+                        Whether you're building a new identity or
+                        ready to take your existing brand further,
+                        let's create something with lasting value.
+                    </p>
+
+                    <a href="mailto:hello@thebrandedit.com"
+                        class="gold-button inline-flex items-center gap-4 bg-[#30211f] text-white px-9 py-4 rounded-full font-bold text-sm mt-10">
+                        Let's Build Your Brand <span class="text-lg">↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#241917] text-[#f4efe7] px-6 lg:px-16 pt-16 pb-8">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid md:grid-cols-2 gap-12 pb-14 border-b border-white/15">
+
+                <div>
+
+                    <a href="#" class="serif text-3xl font-bold">
+                        THE BRAND EDIT<span class="text-[#b48b5b]">.</span>
+                    </a>
+
+                    <p class="text-[#b7a79a] text-sm leading-7 max-w-sm mt-5">
+                        Helping people turn their identity,
+                        expertise and story into a brand that matters.
+                    </p>
+
+                </div>
+
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+
+                    <div>
+                        <h4 class="text-sm font-bold mb-5">Explore</h4>
+
+                        <ul class="space-y-3 text-sm text-[#b7a79a]">
+                            <li><a href="#story" class="hover:text-white transition">My Story</a></li>
+                            <li><a href="#work" class="hover:text-white transition">Portfolio</a></li>
+                            <li><a href="#expertise" class="hover:text-white transition">Expertise</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-sm font-bold mb-5">Discover</h4>
+
+                        <ul class="space-y-3 text-sm text-[#b7a79a]">
+                            <li><a href="#journal" class="hover:text-white transition">Journal</a></li>
+                            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                            <li><a href="#contact" class="hover:text-white transition">Collaborate</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-sm font-bold mb-5">Follow Along</h4>
+
+                        <ul class="space-y-3 text-sm text-[#b7a79a]">
+                            <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+                            <li><a href="#" class="hover:text-white transition">LinkedIn</a></li>
+                            <li><a href="#" class="hover:text-white transition">Pinterest</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-7 text-xs text-[#88796d]">
+
+                <p>© 2026 THE BRAND EDIT®. All rights reserved.</p>
+
+                <p>Built on identity. Driven by purpose.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
